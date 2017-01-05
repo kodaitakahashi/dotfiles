@@ -1,0 +1,64 @@
+"dein.vim dark power
+let s:dein_dir = expand('~/.vim/bundle/')
+let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim'
+
+"dein Scripts-----------------------------
+if &compatible
+set nocompatible               " Be iMproved
+endif
+
+if !isdirectory(s:dein_repo_dir)
+  echo "install dein.vim..."
+  execute '!git clone git://github.com/Shougo/dein.vim' s:dein_repo_dir
+endif
+execute 'set runtimepath^=' . s:dein_repo_dir
+
+" Required:
+if dein#load_state(s:dein_dir)
+  
+  call dein#begin(expand('~/.vim/bundle'))
+  let g:dein_dir = expand('~/.vim/bundle')
+  let s:toml = g:dein_dir . '/dein.toml'
+
+" Let dein manage dein
+" Required:
+  call dein#load_toml(s:toml, {'lazy': 0})
+
+" You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+"####基本設定####
+set encoding=utf-8
+
+"####表示設定####
+set number "行番号
+set title "編集中のファイル名を表示
+set showmatch "括弧入力時の対なる括弧を表示
+syntax on "コードの色分け
+set expandtab "タブを半角スペース
+set tabstop=2 "半角スペースの幅 
+set shiftwidth=2 "自動インデント際の半角スペーズの幅
+set smartindent "オートインデント
+set guifont=Ricty-Regular:h14
+set guifontwide=Ricty-Regular:h14
+
+"####検索設定####
+set ignorecase "大文字/小文字の区別なく検索する
+set smartcase "検索文字列に大文字、小文字が含まれている場合区別して検索する
+set wrapscan "検索時に最後まで行ったら最初に戻る
