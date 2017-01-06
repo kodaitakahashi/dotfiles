@@ -11,3 +11,5 @@ repo = 'tomasr/molokai'
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
+[[plugins]] #ステータスライン
+repo = 'itchyny/lightline.vim'
