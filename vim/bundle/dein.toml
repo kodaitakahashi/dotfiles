@@ -19,3 +19,6 @@ repo = 'thinca/vim-zenspace'
 
 [[plugins]] #インデントを可視化
 repo = 'nathanaelkane/vim-indent-guides' 
+
+[[plugins]] #括弧などの対応する文字を自動入力
+repo = 'jiangmiao/auto-pairs'
