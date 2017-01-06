@@ -13,3 +13,7 @@ on_ft = 'toml'
 
 [[plugins]] #ステータスライン
 repo = 'itchyny/lightline.vim'
+
+[[plugins]] #Spece Tabの可視化
+repo = 'thinca/vim-zenspace'
+
